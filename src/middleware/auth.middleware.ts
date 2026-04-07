@@ -15,9 +15,17 @@ const authMiddleware = (
 
   const token = authHeader.split(" ")[1];
 
-  if (token !== "mock-jwt-token-123456") {
+  if (!token.startsWith("mock-token-")) {
     return res.status(401).json({
       message: "Invalid token",
+    });
+  }
+
+  const expiry = Number(token.split("mock-token-")[1]);
+
+  if (!expiry || Date.now() > expiry) {
+    return res.status(401).json({
+      message: "Token expired",
     });
   }
 

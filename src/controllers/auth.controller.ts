@@ -7,7 +7,7 @@ import { createUserSchema, UpdateUserInput, updateUserSchema } from "../validato
 
 export const login = (
   req: Request<{}, {}, LoginDto>,
-  res: Response<AuthResponse | { message: string }>
+  res: Response
 ) => {
   const { email, password } = req.body;
 
@@ -15,14 +15,19 @@ export const login = (
     return res.status(401).json({ message: "Invalid credentials" });
   }
 
+  const expiresInMs = 60 * 60 * 1000; // 1 hour
+  const expiry = Date.now() + expiresInMs;
+
+  const token = `mock-token-${expiry}`;
+
   return res.json({
-    token: "mock-jwt-token-123456",
+    token,
     user: {
       id: "admin-id",
       email: "admin@example.com",
       firstName: "Admin",
       lastName: "User",
-      jobTitle: "developer",
+      jobTitle: "Admin",
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     },
