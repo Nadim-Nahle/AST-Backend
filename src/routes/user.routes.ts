@@ -9,7 +9,7 @@ const router = Router();
 // Protected route
 router.get("/users", authMiddleware, getUsers);
 router.post("/users", authMiddleware, validate(createUserSchema), createUserController);
-router.put("/users/:id", authMiddleware, updateUserController);
-router.delete("/users/:id", authMiddleware, validate(createUserSchema), deleteUserController);
+router.put("/users/:id", authMiddleware, validate(createUserSchema), updateUserController);
+router.delete("/users/:id", authMiddleware, deleteUserController);
 
 export default router;
