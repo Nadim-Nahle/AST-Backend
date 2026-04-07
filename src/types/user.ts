@@ -48,3 +48,8 @@ export interface PaginatedResponse<T> {
   limit: number;
   totalPages: number;
 }
+
+export interface GetUsersQuery {
+  page?: string;
+  limit?: string;
+}
