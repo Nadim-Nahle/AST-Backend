@@ -1,14 +1,24 @@
 import { Request, Response } from "express";
 import { LoginDto, AuthResponse } from "../types/user";
-import { getPaginatedUsers, createUser, updateUser, deleteUser } from "../services/user.service";
+import {
+  getPaginatedUsers,
+  createUser,
+  updateUser,
+  deleteUser,
+} from "../services/user.service";
 import { toUserResponse } from "../mappers/user.mapper";
-import { GetUsersQuery, PaginatedResponse, UserResponseDto, UserCreateDto, UserUpdateDto } from "../types/user";
-import { createUserSchema, UpdateUserInput, updateUserSchema } from "../validators/user.validator";
+import {
+  GetUsersQuery,
+  PaginatedResponse,
+  UserResponseDto,
+  UserCreateDto,
+  UserUpdateDto,
+} from "../types/user";
+import {
+  UpdateUserInput,
+} from "../validators/user.validator";
 
-export const login = (
-  req: Request<{}, {}, LoginDto>,
-  res: Response
-) => {
+export const login = (req: Request<{}, {}, LoginDto>, res: Response) => {
   const { email, password } = req.body;
 
   if (email !== "admin@example.com" || password !== "password123") {
@@ -36,7 +46,7 @@ export const login = (
 
 export const getUsers = async (
   req: Request<{}, {}, {}, GetUsersQuery>,
-  res: Response
+  res: Response,
 ) => {
   try {
     const page = parseInt(req.query.page ?? "1", 10);
@@ -59,7 +69,7 @@ export const getUsers = async (
 
 export const createUserController = async (
   req: Request<{}, {}, UserCreateDto>,
-  res: Response
+  res: Response,
 ) => {
   try {
     const newUser = await createUser(req.body);
@@ -67,6 +77,11 @@ export const createUserController = async (
     res.status(201).json(toUserResponse(newUser));
   } catch (error) {
     console.error(error);
+    if (error instanceof Error && error.message === "Email already exists") {
+      return res.status(400).json({
+        message: error.message,
+      });
+    }
     res.status(500).json({
       message: "Failed to create user",
     });
@@ -75,7 +90,7 @@ export const createUserController = async (
 
 export const updateUserController = async (
   req: Request<{ id: string }, {}, UpdateUserInput>,
-  res: Response
+  res: Response,
 ) => {
   try {
     const { id } = req.params;
@@ -97,7 +112,7 @@ export const updateUserController = async (
 
 export const deleteUserController = async (
   req: Request<{ id: string }>,
-  res: Response<{ message: string }>
+  res: Response<{ message: string }>,
 ) => {
   try {
     const { id } = req.params;

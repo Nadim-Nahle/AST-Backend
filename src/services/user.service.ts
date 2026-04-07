@@ -3,10 +3,7 @@ import { User, UserCreateDto, UserUpdateDto } from "../types/user";
 import crypto from "crypto";
 import { UpdateUserInput } from "../validators/user.validator";
 
-export const getPaginatedUsers = async (
-  page: number,
-  limit: number
-) => {
+export const getPaginatedUsers = async (page: number, limit: number) => {
   const users: User[] = await readUsers();
 
   const start = (page - 1) * limit;
@@ -23,6 +20,15 @@ export const getPaginatedUsers = async (
 
 export const createUser = async (data: UserCreateDto): Promise<User> => {
   const users: User[] = await readUsers();
+
+  // 🔥 Prevent duplicate email
+  const emailExists = users.some(
+    (user) => user.email.toLowerCase() === data.email.toLowerCase(),
+  );
+
+  if (emailExists) {
+    throw new Error("Email already exists");
+  }
 
   const now = new Date().toISOString();
 
@@ -47,7 +53,7 @@ export const createUser = async (data: UserCreateDto): Promise<User> => {
 
 export const updateUser = async (
   id: string,
-  updates: UpdateUserInput
+  updates: UpdateUserInput,
 ): Promise<User | null> => {
   const users: User[] = await readUsers();
 

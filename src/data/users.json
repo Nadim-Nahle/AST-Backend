@@ -137,5 +137,15 @@
     "jobTitle": "dev",
     "createdAt": "2026-04-07T21:54:34.251Z",
     "updatedAt": "2026-04-07T21:54:34.251Z"
+  },
+  {
+    "id": "d7610cb1-2856-47cf-b257-be9dcbb746df",
+    "email": "john3@example11.com",
+    "password": "123456",
+    "firstName": "jonnn",
+    "lastName": "Doe",
+    "jobTitle": "dev",
+    "createdAt": "2026-04-07T21:58:51.331Z",
+    "updatedAt": "2026-04-07T21:58:51.331Z"
   }
 ]
