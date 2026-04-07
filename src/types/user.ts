@@ -9,7 +9,7 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
- 
+
 export interface UserCreateDto {
   email: string;
   password: string;
@@ -18,7 +18,7 @@ export interface UserCreateDto {
   jobTitle: string;
   avatar: string;
 }
- 
+
 export interface UserUpdateDto {
   email?: string;
   password?: string;
@@ -27,7 +27,7 @@ export interface UserUpdateDto {
   jobTitle?: string;
   avatar?: string;
 }
- 
+
 export interface UserResponseDto {
   id: string;
   email: string;
@@ -38,17 +38,17 @@ export interface UserResponseDto {
   createdAt: string;
   updatedAt: string;
 }
- 
+
 export interface LoginDto {
   email: string;
   password: string;
 }
- 
+
 export interface AuthResponse {
   token: string;
   user: UserResponseDto;
 }
- 
+
 export interface PaginatedResponse<T> {
   data: T[];
   total: number;

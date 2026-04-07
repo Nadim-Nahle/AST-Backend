@@ -14,9 +14,7 @@ import {
   UserCreateDto,
   UserUpdateDto,
 } from "../types/user";
-import {
-  UpdateUserInput,
-} from "../validators/user.validator";
+import { UpdateUserInput } from "../validators/user.validator";
 
 export const login = (req: Request<{}, {}, LoginDto>, res: Response) => {
   const { email, password } = req.body;

@@ -28,7 +28,7 @@ export const updateUserSchema = z.object({
     .string()
     .min(2, "Job title must be at least 2 characters")
     .optional(),
-    avatar: z.string().url().optional(),
+  avatar: z.string().url().optional(),
 });
 
 export type UpdateUserInput = z.infer<typeof updateUserSchema>;
