@@ -5,6 +5,7 @@ export const toUserResponse = (user: User): UserResponseDto => ({
   email: user.email,
   firstName: user.firstName,
   lastName: user.lastName,
+  jobTitle: user.jobTitle,
   createdAt: user.createdAt,
   updatedAt: user.updatedAt,
 });
