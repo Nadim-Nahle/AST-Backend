@@ -5,6 +5,7 @@ export interface User {
   firstName: string;
   lastName: string;
   jobTitle: string;
+  avatar: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -15,6 +16,7 @@ export interface UserCreateDto {
   firstName: string;
   lastName: string;
   jobTitle: string;
+  avatar: string;
 }
  
 export interface UserUpdateDto {
@@ -22,7 +24,8 @@ export interface UserUpdateDto {
   password?: string;
   firstName?: string;
   lastName?: string;
-  jobTitle: string;
+  jobTitle?: string;
+  avatar?: string;
 }
  
 export interface UserResponseDto {
@@ -31,6 +34,7 @@ export interface UserResponseDto {
   firstName: string;
   lastName: string;
   jobTitle: string;
+  avatar: string;
   createdAt: string;
   updatedAt: string;
 }

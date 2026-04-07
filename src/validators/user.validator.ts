@@ -9,9 +9,8 @@ export const createUserSchema = z.object({
   lastName: z
     .string()
     .regex(/^[A-Za-z]+$/, "Last name must contain only letters"),
-  jobTitle: z
-    .string()
-    .min(2, "Job title must be at least 2 characters"), // ✅ REQUIRED
+  jobTitle: z.string().min(2, "Job title must be at least 2 characters"), // ✅ REQUIRED
+  avatar: z.string().url("Avatar must be a valid URL").optional(),
 });
 
 export const updateUserSchema = z.object({
@@ -29,6 +28,7 @@ export const updateUserSchema = z.object({
     .string()
     .min(2, "Job title must be at least 2 characters")
     .optional(),
+    avatar: z.string().url().optional(),
 });
 
 export type UpdateUserInput = z.infer<typeof updateUserSchema>;

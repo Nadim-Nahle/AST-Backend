@@ -32,6 +32,7 @@ export const createUser = async (data: UserCreateDto): Promise<User> => {
     password: data.password,
     firstName: data.firstName,
     lastName: data.lastName,
+    avatar: data.avatar,
     jobTitle: data.jobTitle,
     createdAt: now,
     updatedAt: now,

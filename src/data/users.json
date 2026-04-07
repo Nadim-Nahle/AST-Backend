@@ -86,5 +86,56 @@
     "jobTitle": "dev",
     "createdAt": "2026-04-07T21:26:33.417Z",
     "updatedAt": "2026-04-07T21:26:33.417Z"
+  },
+  {
+    "id": "331399fd-9e9e-411d-81ce-0bdb89e6b9d0",
+    "email": "john3@example.com",
+    "password": "123456",
+    "firstName": "jonnn",
+    "lastName": "Doe",
+    "jobTitle": "dev",
+    "createdAt": "2026-04-07T21:37:16.798Z",
+    "updatedAt": "2026-04-07T21:37:16.798Z"
+  },
+  {
+    "id": "c437faf2-1c5c-44eb-b1f9-63baa0079a64",
+    "email": "john3@example.com",
+    "password": "123456",
+    "firstName": "jonnn",
+    "lastName": "Doe",
+    "jobTitle": "dev",
+    "createdAt": "2026-04-07T21:39:36.419Z",
+    "updatedAt": "2026-04-07T21:39:36.419Z"
+  },
+  {
+    "id": "4bd6534d-af37-4fde-b5fe-256e375f86ff",
+    "email": "john3@example.com",
+    "password": "123456",
+    "firstName": "jonnn",
+    "lastName": "Doe",
+    "jobTitle": "dev",
+    "createdAt": "2026-04-07T21:39:40.718Z",
+    "updatedAt": "2026-04-07T21:39:40.718Z"
+  },
+  {
+    "id": "ced57992-4c5c-4025-b8bc-fcd4ff99d714",
+    "email": "john3@example.com",
+    "password": "123456",
+    "firstName": "jonnn",
+    "lastName": "Doe",
+    "avatar": "https://i.pravatar.cc/150?img=1",
+    "jobTitle": "test",
+    "createdAt": "2026-04-07T21:47:48.497Z",
+    "updatedAt": "2026-04-07T21:53:26.553Z"
+  },
+  {
+    "id": "f919d7d4-1ae9-450e-aea8-7c9a25d95718",
+    "email": "john3@example.com",
+    "password": "123456",
+    "firstName": "jonnn",
+    "lastName": "Doe",
+    "jobTitle": "dev",
+    "createdAt": "2026-04-07T21:54:34.251Z",
+    "updatedAt": "2026-04-07T21:54:34.251Z"
   }
 ]
