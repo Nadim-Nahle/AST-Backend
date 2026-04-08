@@ -5,8 +5,8 @@ Follow these steps to run the project locally.
 ## 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
-cd <your-project-folder>
+git clone https://github.com/Nadim-Nahle/AST-Backend.git
+cd AST-Backend
 ```
 
 ## 2. Install dependencies
